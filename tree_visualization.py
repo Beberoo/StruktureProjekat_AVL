@@ -31,7 +31,14 @@ def add_edges(graph, root):
         add_edges(graph, root.right)
 
 
-def draw_tree(root, title="Tree", ax=None):
+def draw_tree(
+    root,
+    title="Tree",
+    ax=None,
+    node_color="#a8d8ea",
+    edge_color="#444444",
+    title_color="#111111"
+):
     import networkx as nx
 
     G = nx.DiGraph()
@@ -48,14 +55,14 @@ def draw_tree(root, title="Tree", ax=None):
         ax=ax,
         with_labels=True,
         node_size=1400,
-        node_color="#a8d8ea",
-        edge_color="#444444",
+        node_color=node_color,
+        edge_color=edge_color,
         font_size=11,
         font_weight="bold",
         linewidths=1.2,
         arrows=False
     )
 
-    ax.set_title(title, fontsize=14)
+    ax.set_title(title, fontsize=14, color=title_color)
     ax.margins(0.15)
     ax.set_axis_off()

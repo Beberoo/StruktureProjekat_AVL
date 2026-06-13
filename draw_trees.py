@@ -1,6 +1,7 @@
 from bst import BST
 from avl import AVL
 from tree_visualization import draw_tree
+from rotation_visual import generate_rotation_images
 import random
 import matplotlib.pyplot as plt
 import os
@@ -28,4 +29,5 @@ def show_trees(size=20):
     draw_tree(root_avl, "AVL Tree", ax=axes[1])
     plt.tight_layout()
     plt.savefig("results/trees.png", bbox_inches="tight", dpi=140)
+    generate_rotation_images("results")
     plt.show()
